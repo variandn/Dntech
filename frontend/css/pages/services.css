@@ -1,0 +1,41 @@
+/* ============================================
+   DNtech — Services Page Styles
+   Service detail, portfolio gallery, lightbox
+   ============================================ */
+
+/* ══ SERVICE DETAIL ══ */
+.service-detail { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); align-items: center; }
+.service-detail__image { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+.service-detail__image img { width: 100%; height: 400px; object-fit: cover; transition: transform var(--transition-slow); }
+.service-detail__image:hover img { transform: scale(1.03); }
+.service-detail__content h2 { margin-bottom: var(--space-md); }
+.service-detail__content p { color: var(--color-text-light); margin-bottom: var(--space-lg); }
+.service-detail__features { list-style: none; padding: 0; margin: 0 0 var(--space-xl); }
+.service-detail__features li { display: flex; align-items: flex-start; gap: var(--space-sm); padding: var(--space-sm) 0; font-size: var(--fs-sm); }
+.service-detail__features li i { color: var(--color-primary); margin-top: 3px; }
+
+/* ══ PORTFOLIO GALLERY ══ */
+.portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
+.portfolio-item { position: relative; border-radius: var(--radius-lg); overflow: hidden; cursor: pointer; aspect-ratio: 4/3; }
+.portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-smooth); }
+.portfolio-item__overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,26,46,0.9), transparent 60%); opacity: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: var(--space-lg); transition: opacity var(--transition-smooth); }
+.portfolio-item:hover .portfolio-item__overlay { opacity: 1; }
+.portfolio-item:hover img { transform: scale(1.1); }
+.portfolio-item__title { color: var(--color-white); font-family: var(--font-heading); font-weight: var(--fw-bold); font-size: var(--fs-md); }
+.portfolio-item__category { color: var(--color-accent); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 1px; margin-top: var(--space-xs); }
+
+/* ══ LIGHTBOX ══ */
+.lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: var(--z-modal); display: none; align-items: center; justify-content: center; }
+.lightbox.active { display: flex; }
+.lightbox__content { max-width: 90vw; max-height: 85vh; position: relative; }
+.lightbox__content img { max-width: 100%; max-height: 85vh; object-fit: contain; border-radius: var(--radius-md); }
+.lightbox__close { position: absolute; top: var(--space-lg); right: var(--space-lg); width: 48px; height: 48px; border-radius: var(--radius-full); background: rgba(255,255,255,0.1); border: none; color: var(--color-white); font-size: var(--fs-xl); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background var(--transition-fast); z-index: 10; }
+.lightbox__close:hover { background: var(--color-danger); }
+.lightbox__nav { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: var(--radius-full); background: rgba(255,255,255,0.1); border: none; color: var(--color-white); font-size: var(--fs-lg); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background var(--transition-fast); }
+.lightbox__nav:hover { background: var(--color-primary); }
+.lightbox__nav--prev { left: var(--space-lg); }
+.lightbox__nav--next { right: var(--space-lg); }
+
+@media (max-width: 1023px) { .service-detail { grid-template-columns: 1fr; } }
+@media (max-width: 767px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 479px) { .portfolio-grid { grid-template-columns: 1fr; } }

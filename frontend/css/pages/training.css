@@ -1,0 +1,38 @@
+/* ============================================
+   DNtech — Training Page Styles
+   Course cards, intake calendar, enquiry form
+   ============================================ */
+
+.course-card { background: var(--color-card-bg); border-radius: var(--radius-lg); border: 1px solid var(--color-border); overflow: hidden; transition: all var(--transition-smooth); display: flex; flex-direction: column; }
+.course-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-card); }
+.course-card__header { padding: var(--space-xl); background: linear-gradient(135deg, var(--color-primary), var(--color-accent)); color: var(--color-white); }
+.course-card__icon { font-size: var(--fs-3xl); margin-bottom: var(--space-sm); }
+.course-card__title { font-size: var(--fs-xl); margin-bottom: var(--space-xs); color: var(--color-white); }
+.course-card__duration { font-size: var(--fs-sm); opacity: 0.85; }
+.course-card__body { padding: var(--space-xl); flex: 1; }
+.course-card__topics { list-style: none; padding: 0; margin: 0; }
+.course-card__topics li { display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-sm) 0; font-size: var(--fs-sm); color: var(--color-text); border-bottom: 1px solid var(--color-border); }
+.course-card__topics li:last-child { border-bottom: none; }
+.course-card__topics li i { color: var(--color-primary); font-size: var(--fs-xs); }
+.course-card__footer { padding: var(--space-md) var(--space-xl); border-top: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; }
+.course-card__price { font-family: var(--font-heading); font-size: var(--fs-xl); font-weight: var(--fw-bold); color: var(--color-primary); }
+.course-card__intake { font-size: var(--fs-xs); color: var(--color-text-light); }
+.course-card__intake strong { color: var(--color-text); }
+
+/* Enquiry form panel */
+.training-layout { display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-3xl); align-items: start; }
+.enquiry-panel { background: var(--color-card-bg); border-radius: var(--radius-lg); border: 1px solid var(--color-border); padding: var(--space-2xl); position: sticky; top: calc(var(--nav-height) + var(--space-lg)); }
+.enquiry-panel__title { font-size: var(--fs-xl); margin-bottom: var(--space-lg); display: flex; align-items: center; gap: var(--space-sm); }
+.enquiry-panel__title i { color: var(--color-primary); }
+
+/* Intake calendar */
+.intake-bar { display: flex; gap: var(--space-md); padding: var(--space-lg) 0; overflow-x: auto; margin-bottom: var(--space-xl); }
+.intake-item { flex-shrink: 0; text-align: center; padding: var(--space-md) var(--space-lg); background: var(--color-light); border-radius: var(--radius-md); border: 2px solid transparent; transition: all var(--transition-fast); cursor: pointer; min-width: 100px; }
+.intake-item:hover, .intake-item.active { border-color: var(--color-primary); background: rgba(58,110,165,0.08); }
+.intake-item__month { font-family: var(--font-heading); font-size: var(--fs-lg); font-weight: var(--fw-bold); color: var(--color-primary); }
+.intake-item__year { font-size: var(--fs-xs); color: var(--color-text-light); }
+.intake-item__status { font-size: var(--fs-xs); margin-top: var(--space-xs); }
+.intake-item__status.open { color: var(--color-success); font-weight: var(--fw-semibold); }
+.intake-item__status.closed { color: var(--color-danger); }
+
+@media (max-width: 1023px) { .training-layout { grid-template-columns: 1fr; } .enquiry-panel { position: static; } }

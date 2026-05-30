@@ -1,0 +1,32 @@
+/* DNtech — Admin Page */
+.admin-layout { display: grid; grid-template-columns: var(--sidebar-width) 1fr; min-height: calc(100vh - var(--nav-height)); }
+.admin-sidebar { background: var(--color-dark); padding: var(--space-xl) 0; border-right: 1px solid rgba(255,255,255,0.05); }
+.admin-sidebar__menu { list-style: none; padding: 0; margin: 0; }
+.admin-sidebar__menu a { display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md) var(--space-xl); color: rgba(255,255,255,0.6); font-size: var(--fs-sm); font-weight: var(--fw-medium); transition: all var(--transition-fast); border-left: 3px solid transparent; }
+.admin-sidebar__menu a:hover, .admin-sidebar__menu a.active { color: var(--color-white); background: rgba(90,159,224,0.1); border-left-color: var(--color-accent); }
+.admin-sidebar__menu a i { width: 20px; text-align: center; }
+.admin-main { padding: var(--space-2xl); background: var(--color-body-bg); }
+.admin-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-2xl); }
+.admin-header h1 { font-size: var(--fs-2xl); margin-bottom: 0; }
+.metric-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg); margin-bottom: var(--space-2xl); }
+.metric-card { background: var(--color-card-bg); border-radius: var(--radius-lg); padding: var(--space-xl); border: 1px solid var(--color-border); display: flex; align-items: center; gap: var(--space-lg); transition: all var(--transition-smooth); }
+.metric-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
+.metric-card__icon { width: 52px; height: 52px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: var(--fs-xl); }
+.metric-card__icon--primary { background: rgba(58,110,165,0.12); color: var(--color-primary); }
+.metric-card__icon--success { background: rgba(40,167,69,0.12); color: var(--color-success); }
+.metric-card__icon--warning { background: rgba(240,173,78,0.12); color: var(--color-warning); }
+.metric-card__icon--danger { background: rgba(220,53,69,0.12); color: var(--color-danger); }
+.metric-card__value { font-family: var(--font-heading); font-size: var(--fs-2xl); font-weight: var(--fw-bold); line-height: 1; margin-bottom: var(--space-xs); }
+.metric-card__label { font-size: var(--fs-xs); color: var(--color-text-light); text-transform: uppercase; letter-spacing: 0.5px; }
+.data-table { width: 100%; border-collapse: collapse; background: var(--color-card-bg); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border); }
+.data-table th { background: var(--color-light); padding: var(--space-md) var(--space-lg); text-align: left; font-family: var(--font-heading); font-size: var(--fs-xs); font-weight: var(--fw-bold); text-transform: uppercase; letter-spacing: 0.5px; color: var(--color-text-light); border-bottom: 2px solid var(--color-border); }
+.data-table td { padding: var(--space-md) var(--space-lg); font-size: var(--fs-sm); border-bottom: 1px solid var(--color-border); }
+.data-table tr:hover td { background: rgba(58,110,165,0.03); }
+.data-table .status { padding: 4px 12px; border-radius: var(--radius-full); font-size: var(--fs-xs); font-weight: var(--fw-semibold); }
+.login-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--color-dark); padding: var(--space-lg); }
+.login-card { background: var(--color-white); border-radius: var(--radius-lg); padding: var(--space-3xl); max-width: 420px; width: 100%; box-shadow: var(--shadow-xl); }
+.login-card__logo { text-align: center; margin-bottom: var(--space-2xl); }
+.login-card__logo img { height: 56px; margin: 0 auto var(--space-md); }
+.login-card h2 { text-align: center; margin-bottom: var(--space-2xl); }
+@media (max-width: 1023px) { .admin-layout { grid-template-columns: 1fr; } .admin-sidebar { display: none; } .metric-cards { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 479px) { .metric-cards { grid-template-columns: 1fr; } }

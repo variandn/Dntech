@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DNtech — Africa's leading technology solutions provider. We offer graphics design, networking, software development, and hands-on IT training in Kampala, Uganda.">
+  <meta name="keywords" content="DNtech, IT solutions, Uganda, web development, networking, graphics design, IT training, Kampala">
+  <meta property="og:title" content="DNtech — Africa's Tech Solutions">
+  <meta property="og:description" content="Empowering businesses across Africa with cutting-edge technology solutions.">
+  <meta property="og:type" content="website">
+  <title>DNtech — Africa's Tech Solutions</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages/home.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="page-wrapper">
+
+    <!-- ═══ NAVBAR ═══ -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+      <div class="container">
+        <a href="index.html" class="navbar__logo" aria-label="DNtech home">
+          <span class="navbar__logo-text">DN<span>tech</span></span>
+        </a>
+        <ul class="navbar__menu" id="navMenu">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="training.html">Training</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li class="navbar__cta"><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero" id="hero">
+      <div class="hero__bg"></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__particles" id="heroParticles"></div>
+      <div class="hero__content hero-text-animate">
+        <div class="hero__badge">
+          <i class="fas fa-bolt"></i> Africa's Premier Tech Partner
+        </div>
+        <h1 class="hero__title">Empowering Africa with <span>Innovative Technology</span></h1>
+        <p class="hero__subtitle">We deliver cutting-edge graphics design, networking solutions, software development, and hands-on IT training to businesses across the continent.</p>
+        <div class="hero__actions">
+          <a href="services.html" class="btn btn--primary btn--lg btn--rounded">
+            <i class="fas fa-rocket"></i> Explore Services
+          </a>
+          <a href="contact.html" class="btn btn--secondary btn--lg btn--rounded" style="border-color: var(--color-white); color: var(--color-white);">
+            <i class="fas fa-envelope"></i> Get In Touch
+          </a>
+        </div>
+      </div>
+      <a href="#services-preview" class="hero__scroll">
+        Scroll Down
+        <div class="hero__scroll-line"></div>
+      </a>
+    </section>
+
+    <main id="main">
+      <!-- ═══ STATS BAR ═══ -->
+      <section class="stats-bar">
+        <div class="container">
+          <div class="grid grid--4">
+            <div class="stat reveal">
+              <div class="stat__number" data-count="150">0</div>
+              <div class="stat__label">Projects Completed</div>
+            </div>
+            <div class="stat reveal">
+              <div class="stat__number" data-count="80">0</div>
+              <div class="stat__label">Happy Clients</div>
+            </div>
+            <div class="stat reveal">
+              <div class="stat__number" data-count="500">0</div>
+              <div class="stat__label">Students Trained</div>
+            </div>
+            <div class="stat reveal">
+              <div class="stat__number" data-count="5">0</div>
+              <div class="stat__label">Years Experience</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ SERVICES PREVIEW ═══ -->
+      <section class="section" id="services-preview">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2>Our Services</h2>
+            <p class="section-subtitle">Comprehensive technology solutions tailored to drive your business forward in the digital age.</p>
+          </div>
+          <div class="grid grid--4 reveal reveal--stagger">
+            <div class="service-card">
+              <div class="service-card__icon"><i class="fas fa-palette"></i></div>
+              <h4 class="service-card__title">Graphics Design</h4>
+              <p class="service-card__text">Brand identities, marketing materials, UI/UX design, and visual content that captures your audience.</p>
+              <a href="graphics.html" class="btn btn--secondary btn--sm">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+              <div class="service-card__icon"><i class="fas fa-network-wired"></i></div>
+              <h4 class="service-card__title">Networking</h4>
+              <p class="service-card__text">Enterprise network infrastructure, server setup, security, and ongoing managed IT support.</p>
+              <a href="networking.html" class="btn btn--secondary btn--sm">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+              <div class="service-card__icon"><i class="fas fa-code"></i></div>
+              <h4 class="service-card__title">Development</h4>
+              <p class="service-card__text">Custom web & mobile applications, e-commerce solutions, and enterprise software systems.</p>
+              <a href="development.html" class="btn btn--secondary btn--sm">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+              <div class="service-card__icon"><i class="fas fa-graduation-cap"></i></div>
+              <h4 class="service-card__title">IT Training</h4>
+              <p class="service-card__text">Hands-on courses in networking, programming, graphics design, and cybersecurity.</p>
+              <a href="training.html" class="btn btn--secondary btn--sm">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ WHY CHOOSE US ═══ -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2>Why Choose DNtech?</h2>
+            <p class="section-subtitle">We combine deep technical expertise with a passion for Africa's digital transformation.</p>
+          </div>
+          <div class="grid grid--3 reveal reveal--stagger">
+            <div class="card" style="border-top: 3px solid var(--color-primary);">
+              <div class="card__body" style="text-align:center;">
+                <div class="service-card__icon" style="margin: 0 auto var(--space-lg);"><i class="fas fa-users"></i></div>
+                <h4 class="card__title">Expert Team</h4>
+                <p class="card__text">Our certified professionals bring years of industry experience to every project we deliver.</p>
+              </div>
+            </div>
+            <div class="card" style="border-top: 3px solid var(--color-accent);">
+              <div class="card__body" style="text-align:center;">
+                <div class="service-card__icon" style="margin: 0 auto var(--space-lg);"><i class="fas fa-shield-halved"></i></div>
+                <h4 class="card__title">Quality Assured</h4>
+                <p class="card__text">Every solution undergoes rigorous testing and quality assurance before delivery.</p>
+              </div>
+            </div>
+            <div class="card" style="border-top: 3px solid var(--color-success);">
+              <div class="card__body" style="text-align:center;">
+                <div class="service-card__icon" style="margin: 0 auto var(--space-lg);"><i class="fas fa-headset"></i></div>
+                <h4 class="card__title">24/7 Support</h4>
+                <p class="card__text">Round-the-clock technical support to keep your systems running at peak performance.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ TESTIMONIALS ═══ -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2>What Our Clients Say</h2>
+            <p class="section-subtitle">Trusted by businesses across Uganda and East Africa.</p>
+          </div>
+          <div class="testimonials reveal" id="testimonials">
+            <div class="testimonials__track" id="testimonialTrack">
+              <div class="testimonials__slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-card__quote">DNtech transformed our entire IT infrastructure. Their networking team set up our office with enterprise-grade security and performance. Highly recommended for any business looking to scale.</div>
+                  <div class="testimonial-card__author">
+                    <img src="images/team/member-1.png" alt="James Okello" class="testimonial-card__avatar">
+                    <div>
+                      <div class="testimonial-card__name">James Okello</div>
+                      <div class="testimonial-card__role">CTO, Kampala Logistics Ltd</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonials__slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-card__quote">The training programme at DNtech gave me practical skills I couldn't find anywhere else. Within three months of completing their networking course, I landed my dream job.</div>
+                  <div class="testimonial-card__author">
+                    <img src="images/team/member-2.png" alt="Sarah Namukasa" class="testimonial-card__avatar">
+                    <div>
+                      <div class="testimonial-card__name">Sarah Namukasa</div>
+                      <div class="testimonial-card__role">Network Administrator, MTN Uganda</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonials__slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-card__quote">Outstanding graphics design work! DNtech created our entire brand identity from scratch — logo, marketing materials, and website. Their creativity and attention to detail is unmatched.</div>
+                  <div class="testimonial-card__author">
+                    <img src="images/team/member-3.png" alt="Michael Ssemakula" class="testimonial-card__avatar">
+                    <div>
+                      <div class="testimonial-card__name">Michael Ssemakula</div>
+                      <div class="testimonial-card__role">Founder, Afri-Foods Group</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonials__controls">
+              <button class="testimonials__btn" id="testimonialPrev" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+              <div class="testimonials__dots" id="testimonialDots"></div>
+              <button class="testimonials__btn" id="testimonialNext" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ CTA BANNER ═══ -->
+      <section class="section section--primary cta-banner">
+        <div class="container">
+          <h2>Ready to Transform Your Business?</h2>
+          <p>Let's discuss how DNtech can help you leverage technology for growth. Get a free consultation today.</p>
+          <div class="hero__actions" style="justify-content:center;">
+            <a href="contact.html" class="btn btn--white btn--lg btn--rounded"><i class="fas fa-paper-plane"></i> Contact Us Today</a>
+            <a href="services.html" class="btn btn--lg btn--rounded" style="border: 2px solid #fff; color: #fff;"><i class="fas fa-list"></i> View Services</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <a href="index.html" class="navbar__logo">
+              <span class="navbar__logo-text">DN<span>tech</span></span>
+            </a>
+            <p>Africa's premier technology solutions provider. We empower businesses with innovative IT solutions, professional training, and creative design services.</p>
+            <div class="footer__social">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer__heading">Quick Links</h4>
+            <ul class="footer__links">
+              <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+              <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+              <li><a href="training.html"><i class="fas fa-chevron-right"></i> Training</a></li>
+              <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+              <li><a href="careers.html"><i class="fas fa-chevron-right"></i> Careers</a></li>
+              <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer__heading">Services</h4>
+            <ul class="footer__links">
+              <li><a href="graphics.html"><i class="fas fa-chevron-right"></i> Graphics Design</a></li>
+              <li><a href="networking.html"><i class="fas fa-chevron-right"></i> Networking</a></li>
+              <li><a href="development.html"><i class="fas fa-chevron-right"></i> Development</a></li>
+              <li><a href="training.html"><i class="fas fa-chevron-right"></i> IT Training</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer__heading">Contact Us</h4>
+            <div class="footer__contact-item"><i class="fas fa-map-marker-alt"></i><span>Plot 12, Kampala Road<br>Kampala, Uganda</span></div>
+            <div class="footer__contact-item"><i class="fas fa-phone"></i><span>+256 700 123 456</span></div>
+            <div class="footer__contact-item"><i class="fas fa-envelope"></i><span>info@dntech.co.ug</span></div>
+            <div class="footer__contact-item"><i class="fas fa-clock"></i><span>Mon – Fri: 8:00 AM – 6:00 PM<br>Sat: 9:00 AM – 1:00 PM</span></div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2026 DNtech. All rights reserved.</p>
+          <div class="footer__bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="js/utils.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/testimonials.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

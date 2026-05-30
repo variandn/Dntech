@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applications | DNtech Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/pages/admin.css">
+</head>
+<body>
+
+  <nav class="navbar" style="position: sticky; z-index: 1000;">
+    <div class="container" style="max-width: 100%;">
+      <a href="../index.html" class="navbar__logo">
+        <span class="navbar__logo-text">DN<span>tech</span> <span style="font-size: 1rem; color: var(--color-silver); font-weight: normal; margin-left: 10px;">| Admin</span></span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <span class="text-white fw-medium"><i class="fas fa-user-circle"></i> Admin User</span>
+        <a href="login.html" class="btn btn--secondary btn--sm" style="border-color: rgba(255,255,255,0.2); color: white;">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <ul class="admin-sidebar__menu">
+        <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+        <li><a href="enquiries.html"><i class="fas fa-envelope"></i> Contact Enquiries</a></li>
+        <li><a href="jobs.html"><i class="fas fa-briefcase"></i> Job Listings</a></li>
+        <li><a href="applications.html" class="active"><i class="fas fa-file-alt"></i> Applications</a></li>
+        <li><a href="training-enquiries.html"><i class="fas fa-graduation-cap"></i> Training Enquiries</a></li>
+        <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+      </ul>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-header animate-fade-up">
+        <h1>Job Applications</h1>
+        <div class="filter-bar__search">
+          <i class="fas fa-search"></i>
+          <input type="text" class="form-input" placeholder="Search applicants...">
+        </div>
+      </div>
+
+      <div class="card animate-fade-up" style="animation-delay: 0.1s;">
+        <div class="card__body" style="padding: 0;">
+          <table class="data-table" data-sortable>
+            <thead>
+              <tr>
+                <th data-sort>Date <i class="fas fa-sort"></i></th>
+                <th data-sort>Applicant Name <i class="fas fa-sort"></i></th>
+                <th data-sort>Position <i class="fas fa-sort"></i></th>
+                <th>CV</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>May 29, 2026</td>
+                <td><strong>Jane Kizza</strong><br><span class="text-muted" style="font-size: 12px;">jane.k@gmail.com</span></td>
+                <td>Senior Software Engineer</td>
+                <td><a href="#" class="text-primary"><i class="fas fa-download"></i> Download</a></td>
+                <td>
+                  <select class="form-select status-select" style="padding: 4px 30px 4px 12px; font-size: 12px; height: auto;">
+                    <option value="new" selected>Under Review</option>
+                    <option value="interview">Interview Scheduled</option>
+                    <option value="rejected">Rejected</option>
+                    <option value="hired">Hired</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>May 28, 2026</td>
+                <td><strong>Peter Ochieng</strong><br><span class="text-muted" style="font-size: 12px;">peter.o@gmail.com</span></td>
+                <td>Network Support Engineer</td>
+                <td><a href="#" class="text-primary"><i class="fas fa-download"></i> Download</a></td>
+                <td>
+                  <select class="form-select status-select" style="padding: 4px 30px 4px 12px; font-size: 12px; height: auto;">
+                    <option value="new">Under Review</option>
+                    <option value="interview" selected>Interview Scheduled</option>
+                    <option value="rejected">Rejected</option>
+                    <option value="hired">Hired</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <script src="../js/utils.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

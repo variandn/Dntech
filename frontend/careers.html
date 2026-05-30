@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join the DNtech team. Explore our current job openings.">
+  <title>Careers | DNtech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages/careers.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="page-wrapper">
+
+    <!-- ═══ NAVBAR ═══ -->
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <a href="index.html" class="navbar__logo">
+          <span class="navbar__logo-text">DN<span>tech</span></span>
+        </a>
+        <ul class="navbar__menu" id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="training.html">Training</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="careers.html" class="active">Careers</a></li>
+          <li class="navbar__cta"><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- ═══ PAGE HEADER ═══ -->
+    <header class="page-header">
+      <div class="container">
+        <h1 class="animate-fade-up">Join Our Team</h1>
+        <div class="breadcrumb animate-fade-up" style="animation-delay: 0.2s">
+          <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Careers</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2>Current Openings</h2>
+            <p class="section-subtitle">We are always looking for talented individuals to join our growing team.</p>
+          </div>
+
+          <!-- Filter Bar -->
+          <div class="filter-bar reveal">
+            <div class="filter-bar__search">
+              <i class="fas fa-search"></i>
+              <input type="text" id="jobSearch" class="form-input" placeholder="Search by job title or keyword...">
+            </div>
+            <div class="filter-bar__select">
+              <select id="jobTypeFilter" class="form-select">
+                <option value="">All Job Types</option>
+                <option value="full-time">Full-Time</option>
+                <option value="part-time">Part-Time</option>
+                <option value="internship">Internship</option>
+              </select>
+            </div>
+            <div class="filter-bar__count">Showing <strong id="jobCount">3</strong> jobs</div>
+          </div>
+
+          <!-- Job List -->
+          <div class="job-list reveal reveal--stagger">
+            <!-- Job 1 -->
+            <div class="job-card" data-title="Senior Software Engineer" data-type="full-time">
+              <div class="job-card__icon"><i class="fas fa-laptop-code"></i></div>
+              <div class="job-card__content">
+                <h3 class="job-card__title">Senior Software Engineer</h3>
+                <div class="job-card__meta">
+                  <span><i class="fas fa-building"></i> Development</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Kampala, Uganda</span>
+                  <span><i class="fas fa-clock"></i> Full-Time</span>
+                </div>
+                <p class="job-card__desc">We are looking for an experienced Java/Spring Boot developer to lead backend development for our enterprise clients.</p>
+                <div class="job-card__tags">
+                  <span class="badge badge--primary">Java</span>
+                  <span class="badge badge--primary">Spring Boot</span>
+                  <span class="badge badge--primary">MongoDB</span>
+                </div>
+              </div>
+              <div class="job-card__actions">
+                <div class="job-card__deadline"><i class="fas fa-exclamation-circle"></i> Closes: 15 Jun 2026</div>
+                <button class="btn btn--primary btn--sm" onclick="document.getElementById('applyModal').classList.add('active'); document.body.style.overflow='hidden';">Apply Now</button>
+              </div>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="job-card" data-title="Network Support Engineer" data-type="full-time">
+              <div class="job-card__icon"><i class="fas fa-network-wired"></i></div>
+              <div class="job-card__content">
+                <h3 class="job-card__title">Network Support Engineer</h3>
+                <div class="job-card__meta">
+                  <span><i class="fas fa-building"></i> Networking</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Kampala, Uganda</span>
+                  <span><i class="fas fa-clock"></i> Full-Time</span>
+                </div>
+                <p class="job-card__desc">Join our support team to help maintain and troubleshoot client network infrastructures. CCNA certification required.</p>
+                <div class="job-card__tags">
+                  <span class="badge badge--primary">Cisco</span>
+                  <span class="badge badge--primary">Troubleshooting</span>
+                  <span class="badge badge--primary">Linux</span>
+                </div>
+              </div>
+              <div class="job-card__actions">
+                <div class="job-card__deadline"><i class="fas fa-exclamation-circle"></i> Closes: 30 Jun 2026</div>
+                <button class="btn btn--primary btn--sm" onclick="document.getElementById('applyModal').classList.add('active'); document.body.style.overflow='hidden';">Apply Now</button>
+              </div>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="job-card" data-title="UI/UX Design Intern" data-type="internship">
+              <div class="job-card__icon"><i class="fas fa-palette"></i></div>
+              <div class="job-card__content">
+                <h3 class="job-card__title">UI/UX Design Intern</h3>
+                <div class="job-card__meta">
+                  <span><i class="fas fa-building"></i> Design</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+                  <span><i class="fas fa-clock"></i> Internship</span>
+                </div>
+                <p class="job-card__desc">A 3-month internship program for aspiring designers to work on real-world projects alongside our senior design team.</p>
+                <div class="job-card__tags">
+                  <span class="badge badge--primary">Figma</span>
+                  <span class="badge badge--primary">Prototyping</span>
+                  <span class="badge badge--primary">Wireframing</span>
+                </div>
+              </div>
+              <div class="job-card__actions">
+                <div class="job-card__deadline"><i class="fas fa-exclamation-circle"></i> Closes: 10 Jul 2026</div>
+                <button class="btn btn--primary btn--sm" onclick="document.getElementById('applyModal').classList.add('active'); document.body.style.overflow='hidden';">Apply Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ═══ APPLY MODAL (Multi-step Form) ═══ -->
+    <div class="modal-overlay" id="applyModal">
+      <div class="modal">
+        <div class="modal__header">
+          <h3>Apply for Position</h3>
+          <button class="modal__close" onclick="document.getElementById('applyModal').classList.remove('active'); document.body.style.overflow='';"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal__body">
+          
+          <div class="apply-stepper">
+            <div class="apply-step active">
+              <div class="apply-step__number">1</div>
+              <div class="apply-step__label">Personal Info</div>
+            </div>
+            <div class="apply-step__line"></div>
+            <div class="apply-step">
+              <div class="apply-step__number">2</div>
+              <div class="apply-step__label">Upload CV</div>
+            </div>
+            <div class="apply-step__line"></div>
+            <div class="apply-step">
+              <div class="apply-step__number">3</div>
+              <div class="apply-step__label">Review</div>
+            </div>
+          </div>
+
+          <form id="applyForm" data-validate>
+            <!-- Step 1 -->
+            <div class="apply-form-step active" id="step1">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fname" class="form-label">First Name</label>
+                  <input type="text" id="fname" class="form-input" required>
+                  <div class="form-error"></div>
+                </div>
+                <div class="form-group">
+                  <label for="lname" class="form-label">Last Name</label>
+                  <input type="text" id="lname" class="form-input" required>
+                  <div class="form-error"></div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="appEmail" class="form-label">Email</label>
+                  <input type="email" id="appEmail" class="form-input" required>
+                  <div class="form-error"></div>
+                </div>
+                <div class="form-group">
+                  <label for="appPhone" class="form-label">Phone</label>
+                  <input type="tel" id="appPhone" class="form-input" required>
+                  <div class="form-error"></div>
+                </div>
+              </div>
+              <div class="apply-form__nav">
+                <div></div>
+                <button type="button" class="btn btn--primary" onclick="if(validateStep(1)) nextStep()">Next Step <i class="fas fa-arrow-right"></i></button>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="apply-form-step" id="step2">
+              <div class="form-group">
+                <label for="cvUpload" class="form-label">Upload CV/Resume</label>
+                <input type="file" id="cvUpload" class="form-input" accept=".pdf,.doc,.docx" required>
+                <div class="form-hint">Accepted formats: PDF, DOCX (Max 5MB)</div>
+                <div class="form-error"></div>
+              </div>
+              <div class="form-group">
+                <label for="coverLetter" class="form-label">Cover Letter (Optional)</label>
+                <textarea id="coverLetter" class="form-textarea" placeholder="Tell us why you are a great fit..."></textarea>
+              </div>
+              <div class="apply-form__nav">
+                <button type="button" class="btn btn--secondary" onclick="prevStep()"><i class="fas fa-arrow-left"></i> Back</button>
+                <button type="button" class="btn btn--primary" onclick="if(validateStep(2)) nextStep()">Review <i class="fas fa-arrow-right"></i></button>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="apply-form-step" id="step3">
+              <div class="form-group">
+                <p>Please review your details before submitting.</p>
+                <ul style="list-style: none; padding: 0; margin-top: 16px;">
+                  <li style="margin-bottom: 8px;"><strong>Name:</strong> <span id="reviewName"></span></li>
+                  <li style="margin-bottom: 8px;"><strong>Email:</strong> <span id="reviewEmail"></span></li>
+                  <li><strong>CV Attached:</strong> Yes</li>
+                </ul>
+              </div>
+              <div class="apply-form__nav">
+                <button type="button" class="btn btn--secondary" onclick="prevStep()"><i class="fas fa-arrow-left"></i> Back</button>
+                <button type="submit" class="btn btn--primary"><i class="fas fa-check"></i> Submit Application</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <a href="index.html" class="navbar__logo">
+              <span class="navbar__logo-text">DN<span>tech</span></span>
+            </a>
+            <p>Africa's premier technology solutions provider. We empower businesses with innovative IT solutions, professional training, and creative design services.</p>
+            <div class="footer__social">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer__heading">Quick Links</h4>
+            <ul class="footer__links">
+              <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+              <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+              <li><a href="training.html"><i class="fas fa-chevron-right"></i> Training</a></li>
+              <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+              <li><a href="careers.html"><i class="fas fa-chevron-right"></i> Careers</a></li>
+              <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer__heading">Services</h4>
+            <ul class="footer__links">
+              <li><a href="graphics.html"><i class="fas fa-chevron-right"></i> Graphics Design</a></li>
+              <li><a href="networking.html"><i class="fas fa-chevron-right"></i> Networking</a></li>
+              <li><a href="development.html"><i class="fas fa-chevron-right"></i> Development</a></li>
+              <li><a href="training.html"><i class="fas fa-chevron-right"></i> IT Training</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer__heading">Contact Us</h4>
+            <div class="footer__contact-item"><i class="fas fa-map-marker-alt"></i><span>Plot 12, Kampala Road<br>Kampala, Uganda</span></div>
+            <div class="footer__contact-item"><i class="fas fa-phone"></i><span>+256 700 123 456</span></div>
+            <div class="footer__contact-item"><i class="fas fa-envelope"></i><span>info@dntech.co.ug</span></div>
+            <div class="footer__contact-item"><i class="fas fa-clock"></i><span>Mon – Fri: 8:00 AM – 6:00 PM<br>Sat: 9:00 AM – 1:00 PM</span></div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2026 DNtech. All rights reserved.</p>
+          <div class="footer__bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/forms.js"></script>
+  <script src="js/careers.js"></script>
+  <script>
+    // Simple step validation for the modal
+    function validateStep(stepNum) {
+      const stepEl = document.getElementById('step' + stepNum);
+      let valid = true;
+      stepEl.querySelectorAll('[required]').forEach(input => {
+        if (!input.value.trim()) {
+          input.classList.add('error');
+          valid = false;
+        } else {
+          input.classList.remove('error');
+        }
+      });
+      if (stepNum === 1 && valid) {
+        document.getElementById('reviewName').textContent = document.getElementById('fname').value + ' ' + document.getElementById('lname').value;
+        document.getElementById('reviewEmail').textContent = document.getElementById('appEmail').value;
+      }
+      return valid;
+    }
+  </script>
+</body>
+</html>

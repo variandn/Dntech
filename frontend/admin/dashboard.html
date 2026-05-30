@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | DNtech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/pages/admin.css">
+  <!-- Chart.js for Statistics -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <nav class="navbar" style="position: sticky; z-index: 1000;">
+    <div class="container" style="max-width: 100%;">
+      <a href="../index.html" class="navbar__logo">
+        <span class="navbar__logo-text">DN<span>tech</span> <span style="font-size: 1rem; color: var(--color-silver); font-weight: normal; margin-left: 10px;">| Admin</span></span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <span class="text-white fw-medium"><i class="fas fa-user-circle"></i> Admin User</span>
+        <a href="login.html" class="btn btn--secondary btn--sm" style="border-color: rgba(255,255,255,0.2); color: white;">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <ul class="admin-sidebar__menu">
+        <li><a href="dashboard.html" class="active"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+        <li><a href="enquiries.html"><i class="fas fa-envelope"></i> Contact Enquiries</a></li>
+        <li><a href="jobs.html"><i class="fas fa-briefcase"></i> Job Listings</a></li>
+        <li><a href="applications.html"><i class="fas fa-file-alt"></i> Applications</a></li>
+        <li><a href="training-enquiries.html"><i class="fas fa-graduation-cap"></i> Training Enquiries</a></li>
+        <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <div class="admin-header animate-fade-up">
+        <h1>Dashboard Overview</h1>
+      </div>
+
+      <!-- Metric Cards -->
+      <div class="metric-cards animate-fade-up" style="animation-delay: 0.1s;">
+        <div class="metric-card">
+          <div class="metric-card__icon metric-card__icon--primary"><i class="fas fa-envelope"></i></div>
+          <div>
+            <div class="metric-card__value">12</div>
+            <div class="metric-card__label">New Enquiries</div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__icon metric-card__icon--success"><i class="fas fa-file-alt"></i></div>
+          <div>
+            <div class="metric-card__value">28</div>
+            <div class="metric-card__label">Job Applications</div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__icon metric-card__icon--warning"><i class="fas fa-graduation-cap"></i></div>
+          <div>
+            <div class="metric-card__value">5</div>
+            <div class="metric-card__label">Training Signups</div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__icon metric-card__icon--danger"><i class="fas fa-briefcase"></i></div>
+          <div>
+            <div class="metric-card__value">3</div>
+            <div class="metric-card__label">Active Jobs</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Statistics & History -->
+      <div class="grid grid--2 animate-fade-up" style="animation-delay: 0.15s; margin-bottom: var(--space-xl); align-items: start;">
+        <div class="card">
+           <div class="card__body" style="padding: 20px;">
+             <h3 style="margin-bottom: 20px;">Traffic & Applications Overview</h3>
+             <div style="position: relative; height: 300px; width: 100%;">
+               <canvas id="statsChart"></canvas>
+             </div>
+           </div>
+        </div>
+        
+        <div class="card">
+           <div class="card__body" style="padding: 0;">
+             <div style="padding: 20px; border-bottom: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">
+               <h3 style="margin: 0;">System Activity History</h3>
+             </div>
+             <table class="data-table" style="font-size: 13px;">
+               <thead>
+                 <tr>
+                   <th>Time</th>
+                   <th>Action</th>
+                   <th>User</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr>
+                   <td class="text-muted">10 mins ago</td>
+                   <td>Updated Job Posting: <strong>Senior Dev</strong></td>
+                   <td>Admin</td>
+                 </tr>
+                 <tr>
+                   <td class="text-muted">1 hour ago</td>
+                   <td>Replied to Enquiry: <strong>Alice Smith</strong></td>
+                   <td>Admin</td>
+                 </tr>
+                 <tr>
+                   <td class="text-muted">3 hours ago</td>
+                   <td>System Backup Completed</td>
+                   <td>System</td>
+                 </tr>
+                 <tr>
+                   <td class="text-muted">Yesterday</td>
+                   <td>Approved New Training Course</td>
+                   <td>David K.</td>
+                 </tr>
+                 <tr>
+                   <td class="text-muted">Yesterday</td>
+                   <td>Deleted Spam Applications (3)</td>
+                   <td>Grace N.</td>
+                 </tr>
+               </tbody>
+             </table>
+           </div>
+        </div>
+      </div>
+
+      <!-- Recent Enquiries Table -->
+      <div class="card animate-fade-up" style="animation-delay: 0.2s;">
+        <div class="card__body" style="padding: 0;">
+          <div style="padding: 20px; border-bottom: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="margin: 0;">Recent Contact Enquiries</h3>
+            <a href="#" class="text-primary fw-medium" style="font-size: var(--fs-sm);">View All</a>
+          </div>
+          <table class="data-table" data-sortable>
+            <thead>
+              <tr>
+                <th data-sort>Date <i class="fas fa-sort"></i></th>
+                <th data-sort>Name <i class="fas fa-sort"></i></th>
+                <th data-sort>Subject <i class="fas fa-sort"></i></th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>May 28, 2026</td>
+                <td><strong>John Doe</strong><br><span class="text-muted" style="font-size: 12px;">john@example.com</span></td>
+                <td>Software Development</td>
+                <td>
+                  <select class="form-select status-select" style="padding: 4px 30px 4px 12px; font-size: 12px; height: auto;">
+                    <option value="new" selected>New</option>
+                    <option value="read">Read</option>
+                    <option value="replied">Replied</option>
+                  </select>
+                </td>
+                <td><button class="btn btn--secondary btn--sm" style="padding: 4px 12px;">View</button></td>
+              </tr>
+              <tr>
+                <td>May 27, 2026</td>
+                <td><strong>Alice Smith</strong><br><span class="text-muted" style="font-size: 12px;">alice@example.com</span></td>
+                <td>Networking Solutions</td>
+                <td>
+                  <select class="form-select status-select" style="padding: 4px 30px 4px 12px; font-size: 12px; height: auto;">
+                    <option value="new">New</option>
+                    <option value="read" selected>Read</option>
+                    <option value="replied">Replied</option>
+                  </select>
+                </td>
+                <td><button class="btn btn--secondary btn--sm" style="padding: 4px 12px;">View</button></td>
+              </tr>
+              <tr>
+                <td>May 25, 2026</td>
+                <td><strong>Robert Kiyosaki</strong><br><span class="text-muted" style="font-size: 12px;">robert@example.com</span></td>
+                <td>General Inquiry</td>
+                <td>
+                  <select class="form-select status-select" style="padding: 4px 30px 4px 12px; font-size: 12px; height: auto;">
+                    <option value="new">New</option>
+                    <option value="read">Read</option>
+                    <option value="replied" selected>Replied</option>
+                  </select>
+                </td>
+                <td><button class="btn btn--secondary btn--sm" style="padding: 4px 12px;">View</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

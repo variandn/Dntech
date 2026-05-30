@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact DNtech.">
+  <title>Contact Us | DNtech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages/contact.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="page-wrapper">
+
+    <!-- ═══ NAVBAR ═══ -->
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <a href="index.html" class="navbar__logo">
+          <span class="navbar__logo-text">DN<span>tech</span></span>
+        </a>
+        <ul class="navbar__menu" id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="training.html">Training</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li class="navbar__cta"><a href="contact.html" class="active">Contact Us</a></li>
+        </ul>
+        <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- ═══ PAGE HEADER ═══ -->
+    <header class="page-header">
+      <div class="container">
+        <h1 class="animate-fade-up">Get in Touch</h1>
+        <div class="breadcrumb animate-fade-up" style="animation-delay: 0.2s">
+          <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Contact</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="section">
+        <div class="container">
+          <div class="contact-layout">
+            
+            <!-- Contact Info -->
+            <div class="contact-info reveal reveal--stagger">
+              <div>
+                <h2 class="mb-2">We'd love to hear from you</h2>
+                <p class="text-muted mb-4">Whether you have a question about our services, pricing, or need technical support, our team is ready to answer all your questions.</p>
+              </div>
+
+              <div class="contact-info-card">
+                <div class="contact-info-card__icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                  <h3 class="contact-info-card__title">Our Office</h3>
+                  <p class="contact-info-card__text">Plot 12, Kampala Road<br>Kampala, Uganda</p>
+                </div>
+              </div>
+
+              <div class="contact-info-card">
+                <div class="contact-info-card__icon"><i class="fas fa-phone"></i></div>
+                <div>
+                  <h3 class="contact-info-card__title">Call Us</h3>
+                  <p class="contact-info-card__text"><a href="tel:+256700123456">+256 700 123 456</a><br><a href="tel:+256414123456">+256 414 123 456</a></p>
+                </div>
+              </div>
+
+              <div class="contact-info-card">
+                <div class="contact-info-card__icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                  <h3 class="contact-info-card__title">Email Us</h3>
+                  <p class="contact-info-card__text"><a href="mailto:info@dntech.co.ug">info@dntech.co.ug</a><br><a href="mailto:support@dntech.co.ug">support@dntech.co.ug</a></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper reveal reveal--right">
+              <h3>Send us a Message</h3>
+              <form id="contactForm" data-validate>
+                <div class="form-group">
+                  <label for="name" class="form-label">Full Name</label>
+                  <input type="text" id="name" name="name" class="form-input" required>
+                  <div class="form-error"></div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                    <div class="form-error"></div>
+                  </div>
+                  <div class="form-group">
+                    <label for="phone" class="form-label">Phone Number (Optional)</label>
+                    <input type="tel" id="phone" name="phone" class="form-input">
+                    <div class="form-error"></div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="subject" class="form-label">Subject</label>
+                  <select id="subject" name="subject" class="form-select" required>
+                    <option value="">-- Please select --</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Graphics Design">Graphics Design</option>
+                    <option value="Networking">Networking Solutions</option>
+                    <option value="Software Development">Software Development</option>
+                    <option value="Training">IT Training</option>
+                  </select>
+                  <div class="form-error"></div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="message" class="form-label">Your Message</label>
+                  <textarea id="message" name="message" class="form-textarea" required></textarea>
+                  <div class="form-error"></div>
+                </div>
+                
+                <button type="submit" class="btn btn--primary btn--full"><i class="fas fa-paper-plane"></i> Send Message</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Map -->
+          <div class="map-wrapper reveal animate-fade-up" style="animation-delay: 0.4s">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127642.58434503714!2d32.49307779774619!3d0.3130282928343118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbc0f9d74b39b%3A0x4538903dd96b6fec!2sKampala%2C%20Uganda!5e0!3m2!1sen!2sus!4v1717088921200!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <a href="index.html" class="navbar__logo">
+              <span class="navbar__logo-text">DN<span>tech</span></span>
+            </a>
+            <p>Africa's premier technology solutions provider. We empower businesses with innovative IT solutions, professional training, and creative design services.</p>
+            <div class="footer__social">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer__heading">Quick Links</h4>
+            <ul class="footer__links">
+              <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+              <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+              <li><a href="training.html"><i class="fas fa-chevron-right"></i> Training</a></li>
+              <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+              <li><a href="careers.html"><i class="fas fa-chevron-right"></i> Careers</a></li>
+              <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer__heading">Services</h4>
+            <ul class="footer__links">
+              <li><a href="graphics.html"><i class="fas fa-chevron-right"></i> Graphics Design</a></li>
+              <li><a href="networking.html"><i class="fas fa-chevron-right"></i> Networking</a></li>
+              <li><a href="development.html"><i class="fas fa-chevron-right"></i> Development</a></li>
+              <li><a href="training.html"><i class="fas fa-chevron-right"></i> IT Training</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer__heading">Contact Us</h4>
+            <div class="footer__contact-item"><i class="fas fa-map-marker-alt"></i><span>Plot 12, Kampala Road<br>Kampala, Uganda</span></div>
+            <div class="footer__contact-item"><i class="fas fa-phone"></i><span>+256 700 123 456</span></div>
+            <div class="footer__contact-item"><i class="fas fa-envelope"></i><span>info@dntech.co.ug</span></div>
+            <div class="footer__contact-item"><i class="fas fa-clock"></i><span>Mon – Fri: 8:00 AM – 6:00 PM<br>Sat: 9:00 AM – 1:00 PM</span></div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2026 DNtech. All rights reserved.</p>
+          <div class="footer__bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>

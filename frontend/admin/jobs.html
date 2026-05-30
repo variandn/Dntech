@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Listings | DNtech Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/pages/admin.css">
+</head>
+<body>
+
+  <nav class="navbar" style="position: sticky; z-index: 1000;">
+    <div class="container" style="max-width: 100%;">
+      <a href="../index.html" class="navbar__logo">
+        <span class="navbar__logo-text">DN<span>tech</span> <span style="font-size: 1rem; color: var(--color-silver); font-weight: normal; margin-left: 10px;">| Admin</span></span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <span class="text-white fw-medium"><i class="fas fa-user-circle"></i> Admin User</span>
+        <a href="login.html" class="btn btn--secondary btn--sm" style="border-color: rgba(255,255,255,0.2); color: white;">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <ul class="admin-sidebar__menu">
+        <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+        <li><a href="enquiries.html"><i class="fas fa-envelope"></i> Contact Enquiries</a></li>
+        <li><a href="jobs.html" class="active"><i class="fas fa-briefcase"></i> Job Listings</a></li>
+        <li><a href="applications.html"><i class="fas fa-file-alt"></i> Applications</a></li>
+        <li><a href="training-enquiries.html"><i class="fas fa-graduation-cap"></i> Training Enquiries</a></li>
+        <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+      </ul>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-header animate-fade-up">
+        <h1>Manage Job Listings</h1>
+        <button class="btn btn--primary"><i class="fas fa-plus"></i> Post New Job</button>
+      </div>
+
+      <div class="card animate-fade-up" style="animation-delay: 0.1s;">
+        <div class="card__body" style="padding: 0;">
+          <table class="data-table" data-sortable>
+            <thead>
+              <tr>
+                <th data-sort>Job Title <i class="fas fa-sort"></i></th>
+                <th data-sort>Department <i class="fas fa-sort"></i></th>
+                <th data-sort>Type <i class="fas fa-sort"></i></th>
+                <th data-sort>Closing Date <i class="fas fa-sort"></i></th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Senior Software Engineer</strong></td>
+                <td>Development</td>
+                <td>Full-Time</td>
+                <td>15 Jun 2026</td>
+                <td><span class="badge badge--success">Active</span></td>
+                <td>
+                  <button class="btn btn--secondary btn--sm" style="padding: 4px 8px;"><i class="fas fa-edit"></i></button>
+                  <button class="btn btn--sm" style="padding: 4px 8px; color: var(--color-danger); border-color: var(--color-danger); background: transparent;"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Network Support Engineer</strong></td>
+                <td>Networking</td>
+                <td>Full-Time</td>
+                <td>30 Jun 2026</td>
+                <td><span class="badge badge--success">Active</span></td>
+                <td>
+                  <button class="btn btn--secondary btn--sm" style="padding: 4px 8px;"><i class="fas fa-edit"></i></button>
+                  <button class="btn btn--sm" style="padding: 4px 8px; color: var(--color-danger); border-color: var(--color-danger); background: transparent;"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>UI/UX Design Intern</strong></td>
+                <td>Design</td>
+                <td>Internship</td>
+                <td>10 Jul 2026</td>
+                <td><span class="badge badge--warning">Draft</span></td>
+                <td>
+                  <button class="btn btn--secondary btn--sm" style="padding: 4px 8px;"><i class="fas fa-edit"></i></button>
+                  <button class="btn btn--sm" style="padding: 4px 8px; color: var(--color-danger); border-color: var(--color-danger); background: transparent;"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <script src="../js/utils.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>
