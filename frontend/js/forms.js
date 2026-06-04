@@ -71,10 +71,14 @@
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
-    // Determine the API endpoint based on the form action or use default
+    // Determine the API endpoint based on the form id or action
     let endpoint = form.getAttribute('action');
-    if (!endpoint || endpoint === '#' || endpoint === '') {
-        endpoint = 'http://localhost:8080/dntech/api/enquiries'; // Default endpoint for local testing
+    if (form.id === 'trainingEnquiryForm') {
+      endpoint = API_BASE + '/training-enquiries';
+    } else if (form.id === 'loginForm') {
+      endpoint = API_BASE + '/auth/login';
+    } else if (!endpoint || endpoint === '#' || endpoint === '') {
+      endpoint = API_BASE + '/enquiries'; // Default endpoint for general contact forms
     }
 
     try {
@@ -87,6 +91,10 @@
       const result = await response.json();
 
       if (response.ok && result.success) {
+        if (result.data && result.data.redirect) {
+          window.location.href = result.data.redirect;
+          return;
+        }
         showToast(result.message || 'Success!', 'success');
         form.reset();
         form.querySelectorAll('.error').forEach(function (el) { el.classList.remove('error'); });
