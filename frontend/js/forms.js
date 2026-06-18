@@ -77,6 +77,12 @@
       endpoint = API_BASE + '/training-enquiries';
     } else if (form.id === 'loginForm') {
       endpoint = API_BASE + '/auth/login';
+    } else if (form.id === 'applyForm') {
+      endpoint = API_BASE + '/applications';
+    } else if (form.id === 'profileForm') {
+      endpoint = API_BASE + '/settings/profile';
+    } else if (form.id === 'passwordForm') {
+      endpoint = API_BASE + '/settings/password';
     } else if (!endpoint || endpoint === '#' || endpoint === '') {
       endpoint = API_BASE + '/enquiries'; // Default endpoint for general contact forms
     }
@@ -85,7 +91,8 @@
       const response = await fetch(endpoint, {
         method: form.getAttribute('method') || 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
+        credentials: 'include'
       });
 
       const result = await response.json();

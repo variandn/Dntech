@@ -5,6 +5,12 @@
    ============================================ */
 (function () {
 
+  // Fetch helper to automatically pass credentials (session cookies) for standalone/cross-origin requests
+  function fetchWithCreds(url, options = {}) {
+    options.credentials = 'include';
+    return fetch(url, options);
+  }
+
   // ── Table Sorting ────────────────────────────────────────────
   const tables = document.querySelectorAll('.data-table[data-sortable]');
   tables.forEach(function (table) {
@@ -42,7 +48,7 @@
 
       row.style.opacity = '0.6';
 
-      fetch(API_BASE + endpoint, {
+      fetchWithCreds(API_BASE + endpoint, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id: row.dataset.id, status: sel.value })
@@ -79,7 +85,7 @@
     if (metricValues.length < 4) return; // Not on dashboard page
 
     try {
-      const resp = await fetch(API_BASE + '/dashboard/stats');
+      const resp = await fetchWithCreds(API_BASE + '/dashboard/stats');
       const result = await resp.json();
       if (result.success && result.data) {
         const d = result.data;
@@ -101,7 +107,7 @@
     try {
       tableBody.innerHTML = '<tr><td colspan="6" class="text-center"><i class="fas fa-spinner fa-spin"></i> Loading...</td></tr>';
 
-      const response = await fetch(API_BASE + '/enquiries');
+      const response = await fetchWithCreds(API_BASE + '/enquiries');
       const result = await response.json();
       if (!response.ok || !result.success) throw new Error(result.message || 'Failed to fetch');
 
@@ -146,7 +152,7 @@
     try {
       tableBody.innerHTML = '<tr><td colspan="6" class="text-center"><i class="fas fa-spinner fa-spin"></i> Loading...</td></tr>';
 
-      const response = await fetch(API_BASE + '/jobs');
+      const response = await fetchWithCreds(API_BASE + '/jobs');
       const result = await response.json();
       if (!response.ok || !result.success) throw new Error(result.message || 'Failed to fetch');
 
@@ -190,7 +196,7 @@
     try {
       tableBody.innerHTML = '<tr><td colspan="5" class="text-center"><i class="fas fa-spinner fa-spin"></i> Loading...</td></tr>';
 
-      const response = await fetch(API_BASE + '/applications');
+      const response = await fetchWithCreds(API_BASE + '/applications');
       const result = await response.json();
       if (!response.ok || !result.success) throw new Error(result.message || 'Failed to fetch');
 
@@ -236,7 +242,7 @@
     try {
       tableBody.innerHTML = '<tr><td colspan="5" class="text-center"><i class="fas fa-spinner fa-spin"></i> Loading...</td></tr>';
 
-      const response = await fetch(API_BASE + '/training-enquiries');
+      const response = await fetchWithCreds(API_BASE + '/training-enquiries');
       const result = await response.json();
       if (!response.ok || !result.success) throw new Error(result.message || 'Failed to fetch');
 
@@ -286,7 +292,7 @@
 
   window.deleteJob = function (id) {
     if (!confirm('Are you sure you want to delete this job listing?')) return;
-    fetch(API_BASE + '/jobs?id=' + id, { method: 'DELETE' })
+    fetchWithCreds(API_BASE + '/jobs?id=' + id, { method: 'DELETE' })
       .then(r => r.json())
       .then(data => {
         if (data.success) {
@@ -346,11 +352,74 @@
     });
   }
 
-  // ── Init: Load data for current page ─────────────────────────
-  loadDashboardStats();
-  loadEnquiries();
-  loadJobs();
-  loadApplications();
-  loadTrainingEnquiries();
+  // ── Session Authentication & Profile Management ──────────────
+  async function checkSession() {
+    const isLoginPage = window.location.pathname.includes('login.html');
+    
+    try {
+      const resp = await fetchWithCreds(API_BASE + '/auth/session');
+      const result = await resp.json();
+      
+      if (resp.ok && result.success && result.data) {
+        if (isLoginPage) {
+          window.location.href = 'dashboard.html';
+          return;
+        }
+        updateUserProfileInfo(result.data);
+      } else {
+        if (!isLoginPage) {
+          window.location.href = 'login.html';
+        }
+      }
+    } catch (err) {
+      console.error('Session check failed:', err);
+      if (!isLoginPage) {
+        window.location.href = 'login.html';
+      }
+    }
+  }
+
+  function updateUserProfileInfo(user) {
+    const navbarUser = document.querySelector('.navbar .fw-medium');
+    if (navbarUser) {
+      navbarUser.innerHTML = `<i class="fas fa-user-circle"></i> ${sanitiseHTML(user.username || 'Admin User')}`;
+    }
+    
+    const settingsUsername = document.getElementById('settingsUsername');
+    const settingsEmail = document.getElementById('settingsEmail');
+    if (settingsUsername) {
+      settingsUsername.value = user.username || 'admin';
+    }
+    if (settingsEmail) {
+      settingsEmail.value = user.email || '';
+    }
+  }
+
+  // Intercept logout button clicks for proper API logout
+  document.querySelectorAll('a[href="login.html"]').forEach(btn => {
+    if (btn.textContent.trim().toLowerCase() === 'logout') {
+      btn.addEventListener('click', async function (e) {
+        e.preventDefault();
+        try {
+          await fetchWithCreds(API_BASE + '/auth/logout', { method: 'POST' });
+        } catch (err) {
+          console.error('Logout request failed:', err);
+        }
+        window.location.href = 'login.html';
+      });
+    }
+  });
+
+  // ── Init: Session validation & page data loading ─────────────
+  checkSession().then(() => {
+    // Only load page data if we are authenticated (unless on login page)
+    if (!window.location.pathname.includes('login.html')) {
+      loadDashboardStats();
+      loadEnquiries();
+      loadJobs();
+      loadApplications();
+      loadTrainingEnquiries();
+    }
+  });
 
 })();

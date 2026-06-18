@@ -51,14 +51,14 @@
         <div class="card">
           <div class="card__body">
             <h3 class="mb-3">Admin Profile</h3>
-            <form data-validate>
+            <form id="profileForm" method="PUT" data-validate>
               <div class="form-group">
                 <label class="form-label">Username</label>
-                <input type="text" class="form-input" value="admin" disabled>
+                <input type="text" id="settingsUsername" class="form-input" disabled>
               </div>
               <div class="form-group">
                 <label class="form-label">Email Address</label>
-                <input type="email" class="form-input" value="admin@dntech.co.ug" required>
+                <input type="email" id="settingsEmail" name="email" class="form-input" required>
                 <div class="form-error"></div>
               </div>
               <button type="submit" class="btn btn--primary">Save Profile</button>
@@ -70,15 +70,15 @@
         <div class="card">
           <div class="card__body">
             <h3 class="mb-3">Change Password</h3>
-            <form data-validate>
+            <form id="passwordForm" method="PUT" data-validate>
               <div class="form-group">
                 <label class="form-label">Current Password</label>
-                <input type="password" class="form-input" required>
+                <input type="password" name="currentPassword" class="form-input" required>
                 <div class="form-error"></div>
               </div>
               <div class="form-group">
                 <label class="form-label">New Password</label>
-                <input type="password" class="form-input" required>
+                <input type="password" name="newPassword" class="form-input" required>
                 <div class="form-error"></div>
               </div>
               <button type="submit" class="btn btn--secondary">Update Password</button>
