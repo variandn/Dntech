@@ -28,6 +28,12 @@ public class ApiResponse {
         this.data = data;
     }
 
+    // ── Getters (used by Gson serialization & IDE analysis) ─────────
+
+    public boolean isSuccess()  { return success; }
+    public String  getMessage() { return message; }
+    public Object  getData()    { return data; }
+
     // ── Static helpers ──────────────────────────────────────────────
 
     public static void sendSuccess(HttpServletResponse resp, int status, String message) throws IOException {
